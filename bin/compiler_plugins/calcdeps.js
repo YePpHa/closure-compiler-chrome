@@ -145,13 +145,6 @@ CalcDeps.prototype.run = function(argv) {
           }
         }
 
-        console.log("deps", deps.map(function(dep) {
-          return dep.path;
-        }));
-        console.log("entries", entries.map(function(entry) {
-          return entry.path;
-        }));
-
         if (defines) {
           for (var i = 0; i < entries.length; i++) {
             entries[i].contents = this.setDefines(entries[i].contents, defines);
