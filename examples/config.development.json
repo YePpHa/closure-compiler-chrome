@@ -1,0 +1,33 @@
+{
+  "config": {
+    "name": "My awesome extension",
+    "description": "A simple description.",
+    "version": "3.2.1"
+  },
+  "compiler": {
+    "closure": {
+      "baseFile": "./node_modules/google-closure-library/third_party/closure/goog/base.js"
+    },
+    "calcdeps": {
+      "baseFile": "./src/closure-primitives/base.js",
+    },
+    "dependencies": [
+      [
+        "./node_modules/google-closure-library/closure/goog/**/*.js",
+        "!./node_modules/google-closure-library/closure/goog/**/*_test.js"
+      ], [
+        "./node_modules/google-closure-library/third_party/closure/goog/**/*.js",
+        "!./node_modules/google-closure-library/third_party/closure/goog/**/*_test.js"
+      ], [
+        "./src/js/**/*.js",
+        "!./src/js/**/*_test.js"
+      ]
+    ],
+    "defines": {
+      "general": {
+        "goog.DEBUG": true,
+        "awesome.enabled": false
+      }
+    }
+  }
+}

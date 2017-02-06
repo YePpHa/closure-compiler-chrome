@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": ${config name},
+  "description": ${config description},
+  "version": ${config version},
+  "default_locale": "en",
+  "background": {
+    "scripts": ${calcdeps --type json my.app},
+    "persistent": true
+  },
+  "permissions": [
+    "*://www.awesome-website.com/"
+  ]
+}
