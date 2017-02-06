@@ -2,7 +2,7 @@
   "name": "closure-compiler-gulp",
   "version": "1.0.0",
   "description": "Gulp addon for using Closure Compiler to create Chrome extensions.",
-  "main": "index.js",
+  "main": "bin/compiler.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
