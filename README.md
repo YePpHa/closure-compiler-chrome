@@ -1,4 +1,6 @@
 # Closure Compiler Gulp
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/YePpHa/closure-compiler-gulp.svg)](https://greenkeeper.io/)
 Gulp addon for using Closure Compiler to create Chrome extensions.
 
 # Examples
