@@ -3,6 +3,11 @@ var path = require("path");
 var glob = require("glob");
 var minimist = require("minimist");
 
+/**
+ * Returns the folders in the directory.
+ * @param {?string} dir the path.
+ * @return {?Array<?string?>} list of all folders in the directory.
+ */
 function getFolders(dir) {
   return fs.readdirSync(dir)
   .filter(function(file) {
@@ -10,7 +15,12 @@ function getFolders(dir) {
   });
 }
 
-function getLocales(loc) {
+/**
+ * Returns the base configuration for each language.
+ * @param {?string} loc path to the i18n folder.
+ * @return {?Object<string, Object>} the language configurations.
+ */
+function getLocalesConfiguration(loc) {
   var locales = {};
   var folders = getFolders(loc);
 
@@ -35,6 +45,11 @@ function getLocales(loc) {
   return locales;
 }
 
+/**
+ * Returns the i18n for each language.
+ * @param {?string} loc path to the i18n folder.
+ * @reeturn {?Object<string, Object>} the i18n data.
+ */
 function getLocaleObject(loc) {
   var detail = {};
   var folders = getFolders(loc);
@@ -93,11 +108,12 @@ function Locale() {
 Locale.prototype.parseArguments = function(argv) {
   return minimist(argv, {
     alias: {
-      "type": "t"
+      "type": "t",
+      "base": "b"
     },
     default: {
       "type": "json",
-      "options": false
+      "base": false
     }
   });
 };
@@ -105,8 +121,8 @@ Locale.prototype.parseArguments = function(argv) {
 Locale.prototype.run = function(argv) {
   argv = this.parseArguments(argv);
   var value = null;
-  if (argv.options) {
-    value = getLocales("./src/i18n", true);
+  if (argv.base) {
+    value = getLocales("./src/i18n");
   } else {
     value = getLocaleObject("./src/i18n");
   }

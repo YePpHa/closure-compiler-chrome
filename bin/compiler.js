@@ -10,14 +10,14 @@ var a = require("async");
 var plugins = {
   calcdeps: require("./compiler_plugins/calcdeps.js"),
   config: require("./compiler_plugins/config.js"),
-  locale: require("./compiler_plugins/locale.js")
+  i18n: require("./compiler_plugins/i18n.js")
 };
 
 function Compiler(closure, config) {
   this.plugins = {
     "calcdeps": new plugins.calcdeps(this, config, closure),
     "config": new plugins.config(this, config.config || {}),
-    "locale": new plugins.locale(this, config)
+    "i18n": new plugins.i18n(this, config)
   };
 }
 
