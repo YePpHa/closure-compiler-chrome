@@ -25,7 +25,7 @@
     "html-entities": "^1.2.0",
     "minimist": "^1.2.0",
     "shortid": "^2.2.7",
-    "temp-write": "^3.1.0",
+    "temp-write": "^3.2.0",
     "through": "^2.3.8",
     "wordwrap": "^1.0.0"
   },
